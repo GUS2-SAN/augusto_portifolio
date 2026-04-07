@@ -19,38 +19,20 @@ export function ContactBlock({ siteConfig }) {
             </div>
           </div>
 
-          <div className="contact-stack">
-            <article className="contact-card contact-card--primary">
-              <span className="contact-card__label">{siteConfig.closing.contactLabel}</span>
-              <div className="contact-card__channels">
-                <a className="contact-card__link" href={`mailto:${siteConfig.email}`}>
-                  {siteConfig.email}
-                </a>
-                <a className="contact-card__link" href={siteConfig.whatsappHref}>
-                  {siteConfig.phoneDisplay}
-                </a>
-              </div>
-              <p>{siteConfig.responseTime}</p>
-            </article>
+          <aside className="contact-panel" aria-label="Canais de contato">
+            <a className="contact-panel__link" href={`mailto:${siteConfig.email}`}>
+              {siteConfig.email}
+            </a>
+            <a className="contact-panel__link" href={siteConfig.phoneHref}>
+              {siteConfig.phoneDisplay}
+            </a>
 
-            <article className="contact-card">
-              <span className="contact-card__label">{siteConfig.closing.firstReplyLabel}</span>
-              <ul className="contact-card__list">
-                {siteConfig.closing.firstReplyItems.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
-
-            <article className="contact-card">
-              <span className="contact-card__label">{siteConfig.closing.highlightsLabel}</span>
-              <ul className="contact-card__list">
-                {siteConfig.closing.highlights.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
-          </div>
+            <ul className="contact-panel__list">
+              {siteConfig.closing.bullets.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </aside>
         </div>
       </div>
     </section>

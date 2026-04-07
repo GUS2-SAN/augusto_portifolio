@@ -8,8 +8,7 @@ export function Footer({ siteConfig }) {
         </div>
 
         <div className="footer__links">
-          <a href="#projetos">Sites reais</a>
-          <a href="#processo">Como funciona</a>
+          <a href="#projetos">Sites</a>
           <a href="#contato">Contato</a>
           <a href={siteConfig.github} target="_blank" rel="noreferrer">
             GitHub

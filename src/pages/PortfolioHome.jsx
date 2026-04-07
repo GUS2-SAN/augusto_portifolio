@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import { AuthoritySection } from '../components/AuthoritySection'
 import { ContactBlock } from '../components/ContactBlock'
 import { Footer } from '../components/Footer'
 import { Hero } from '../components/Hero'
 import { LiveDemos } from '../components/LiveDemos'
-import { ProcessSection } from '../components/ProcessSection'
 import { ProjectsShowcase } from '../components/ProjectsShowcase'
 import { StickyPortfolioNav } from '../components/StickyPortfolioNav'
 import { WhatsAppFloat } from '../components/WhatsAppFloat'
@@ -70,10 +68,8 @@ export function PortfolioHome({ theme, onToggleTheme }) {
       />
 
       <main>
-        <AuthoritySection />
-        <LiveDemos demos={featuredDemos} contactEmail={siteConfig.email} />
-        <ProjectsShowcase projects={projects} contactEmail={siteConfig.email} />
-        <ProcessSection />
+        <LiveDemos demos={featuredDemos} />
+        <ProjectsShowcase projects={projects} />
         <ContactBlock siteConfig={siteConfig} />
       </main>
 

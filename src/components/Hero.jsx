@@ -1,48 +1,32 @@
 import { ThemeToggle } from './ThemeToggle'
 
 const heroNavItems = [
-  { href: '#autoridade', label: 'Autoridade' },
   { href: '#projetos', label: 'Sites' },
-  { href: '#processo', label: 'Processo' },
   { href: '#contato', label: 'Contato' },
 ]
 
-const heroTitleLines = [
-  'Sites premium',
-  'para empresas que não',
-  'podem parecer amadoras.',
-]
+const heroTitleLines = ['Sites premium para empresas', 'que não podem parecer amadoras.']
 
 const heroSubheadline =
   'Projetos sob medida com foco em clareza comercial, credibilidade e contato.'
 
 const heroProofItems = [
   'Projetos reais publicados',
-  'Design + código integrados',
-  'Estrutura orientada à conversão',
+  'Design + código',
+  'Estrutura para conversão',
 ]
-
-const projectPreviewNav = ['Home', 'Sobre', 'Serviços', 'Cases', 'Contato']
 
 export function Hero({ siteConfig, theme, onToggleTheme, featuredProject, heroRef }) {
   const projectName = featuredProject?.name ?? 'Nexus Soluções'
+  const projectCategory = featuredProject?.category ?? 'Projeto publicado'
   const projectNiche = featuredProject?.niche ?? 'Site institucional'
-  const projectTitle =
-    featuredProject?.visualTitle ??
-    'Presença corporativa pronta para abrir conversa e gerar confiança.'
-  const projectCopy =
-    featuredProject?.visualCopy ??
-    'Site pensado para operações de serviço que precisam transmitir maturidade, clareza e segurança desde a primeira dobra.'
-  const projectBadge = featuredProject?.previewBadge ?? 'Projeto real publicado'
+  const projectOutcome =
+    featuredProject?.cardOutcome ?? 'Site B2B com foco em autoridade e geração de contato.'
+  const projectSummary =
+    featuredProject?.cardSummary ?? 'Estrutura pensada para conversas comerciais.'
   const projectHref = featuredProject?.demoHref ?? '#projetos'
   const projectTarget = featuredProject?.demoTarget ?? undefined
   const projectRel = projectTarget === '_blank' ? 'noreferrer' : undefined
-  const previewStats = (featuredProject?.previewStats ?? heroProofItems).slice(0, 3)
-  const projectLogo = projectName
-    .split(' ')
-    .slice(0, 2)
-    .map((item) => item[0]?.toUpperCase())
-    .join('')
 
   return (
     <header className="hero" id="top" ref={heroRef}>
@@ -52,7 +36,7 @@ export function Hero({ siteConfig, theme, onToggleTheme, featuredProject, heroRe
             <span className="hero__mark-badge">AS</span>
 
             <span className="hero__mark-copy">
-              <strong>Portfólio web</strong>
+              <strong>{siteConfig.name}</strong>
               <span>{siteConfig.location}</span>
             </span>
           </a>
@@ -88,7 +72,7 @@ export function Hero({ siteConfig, theme, onToggleTheme, featuredProject, heroRe
               </a>
 
               <a className="button button--ghost" href="#projetos">
-                Explorar sites
+                Ver sites
               </a>
             </div>
 
@@ -100,72 +84,30 @@ export function Hero({ siteConfig, theme, onToggleTheme, featuredProject, heroRe
           </div>
 
           <div className="hero__visual">
-            <div className="hero__visual-glow hero__visual-glow--amber" />
-            <div className="hero__visual-glow hero__visual-glow--indigo" />
+            <article className="hero-preview hero-preview--compact">
+              <div className="hero-preview__media">
+                {featuredProject?.previewImage ? (
+                  <img
+                    className="hero-preview__image"
+                    src={featuredProject.previewImage}
+                    alt={featuredProject.previewAlt}
+                  />
+                ) : null}
 
-            <article className="hero-preview hero-preview--business">
-              <div className="hero-preview__top">
-                <span className="hero-preview__label">Projeto publicado</span>
-                <strong>{projectName}</strong>
-              </div>
+                <div className="hero-preview__scrim" />
 
-              <div className="hero-preview__frame hero-preview__frame--business">
-                <div className="business-spotlight">
-                  {featuredProject?.previewImage ? (
-                    <img
-                      className="business-spotlight__image"
-                      src={featuredProject.previewImage}
-                      alt={featuredProject.previewAlt}
-                    />
-                  ) : null}
-
-                  <div className="business-spotlight__chrome">
-                    <div className="business-spotlight__nav">
-                      <div className="business-spotlight__brand">
-                        <span className="business-spotlight__logo">{projectLogo}</span>
-
-                        <span className="business-spotlight__brand-copy">
-                          <strong>{projectName}</strong>
-                          <small>{projectNiche}</small>
-                        </span>
-                      </div>
-
-                      <div className="business-spotlight__menu" aria-hidden="true">
-                        {projectPreviewNav.map((item) => (
-                          <span key={item}>{item}</span>
-                        ))}
-                      </div>
-
-                      <span className="business-spotlight__cta">Abrir site</span>
-                    </div>
-
-                    <div className="business-spotlight__badges" aria-hidden="true">
-                      <span className="business-spotlight__pill">Projeto publicado</span>
-                      <span className="business-spotlight__pill business-spotlight__pill--accent">
-                        {projectBadge}
-                      </span>
-                    </div>
-
-                    <div className="business-spotlight__content">
-                      <strong>{projectTitle}</strong>
-                      <p>{projectCopy}</p>
-                    </div>
-
-                    <div className="business-spotlight__stats" aria-label="Provas de valor">
-                      {previewStats.map((item) => (
-                        <span className="business-spotlight__stat" key={item}>
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                <div className="hero-preview__top">
+                  <span className="hero-preview__label">{projectCategory}</span>
+                  <strong>{projectName}</strong>
+                  <p>{projectNiche}</p>
                 </div>
               </div>
 
               <div className="hero-preview__meta">
-                <div>
-                  <span className="hero-preview__caption">Explore agora</span>
-                  <strong>{projectName}</strong>
+                <div className="hero-preview__copy">
+                  <span className="hero-preview__caption">Projeto em destaque</span>
+                  <strong>{projectOutcome}</strong>
+                  <p>{projectSummary}</p>
                 </div>
 
                 <a

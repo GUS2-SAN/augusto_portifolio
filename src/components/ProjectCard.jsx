@@ -1,13 +1,14 @@
 import { ProjectTemplateVisual } from './ProjectTemplateVisual'
 
-export function ProjectCard({ project, index, contactEmail }) {
-  const defaultProjectSubject = encodeURIComponent(`Solicitar projeto inspirado em ${project.name}`)
-  const primaryHref = project.demoHref ?? `mailto:${contactEmail}?subject=${defaultProjectSubject}`
-  const primaryLabel = project.demoLabel ?? 'Solicitar projeto'
-  const primaryTarget = project.demoTarget
+export function ProjectCard({ project, index, variant = 'example' }) {
+  const hasDemo = Boolean(project.demoHref)
+  const primaryHref = hasDemo ? project.demoHref : undefined
+  const primaryLabel = hasDemo ? project.demoLabel ?? 'Abrir site' : undefined
+  const primaryTarget = hasDemo ? project.demoTarget : undefined
   const primaryRel = primaryTarget === '_blank' ? 'noreferrer' : undefined
-  const secondaryHref = project.secondaryHref ?? '#contato'
-  const secondaryLabel = project.secondaryLabel ?? 'Pedir proposta'
+  const showSecondaryAction = hasDemo && variant === 'live' && index < 2
+  const secondaryHref = showSecondaryAction ? project.secondaryHref ?? '#contato' : undefined
+  const secondaryLabel = showSecondaryAction ? 'Solicitar projeto' : undefined
 
   const style = {
     '--project-accent': project.palette.accent,
@@ -23,47 +24,44 @@ export function ProjectCard({ project, index, contactEmail }) {
 
   return (
     <article
-      className={`project-card project-card--uniform project-card--${project.theme}`}
+      className={`project-card project-card--uniform project-card--${project.theme} project-card--${variant}`}
       style={style}
     >
       <div className="project-card__aura" />
 
-      <div className="project-card__media">
-        <ProjectTemplateVisual project={project} />
-      </div>
-
       <div className="project-card__content">
         <div className="project-card__meta">
           <span>{project.category}</span>
-          <strong>{project.niche}</strong>
         </div>
 
         <h3>{project.name}</h3>
+        {variant === 'example' ? <p className="project-card__niche">{project.niche}</p> : null}
         {project.cardOutcome ? <p className="project-card__outcome">{project.cardOutcome}</p> : null}
-        <p className="project-card__summary">{project.cardSummary}</p>
 
-        <ul
-          className="project-card__feature-list"
-          aria-label={`Benefícios comerciais do projeto ${project.name}`}
-        >
-          {project.cardFeatures.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
+        {primaryHref || secondaryHref ? (
+          <div className="project-card__actions">
+            {primaryHref ? (
+              <a
+                className="button button--primary"
+                href={primaryHref}
+                target={primaryTarget}
+                rel={primaryRel}
+              >
+                {primaryLabel}
+              </a>
+            ) : null}
 
-        <div className="project-card__actions">
-          <a className="button button--ghost" href={secondaryHref}>
-            {secondaryLabel}
-          </a>
-          <a
-            className="button button--primary"
-            href={primaryHref}
-            target={primaryTarget}
-            rel={primaryRel}
-          >
-            {primaryLabel}
-          </a>
-        </div>
+            {secondaryHref ? (
+              <a className="button button--ghost" href={secondaryHref}>
+                {secondaryLabel}
+              </a>
+            ) : null}
+          </div>
+        ) : null}
+      </div>
+
+      <div className="project-card__media">
+        <ProjectTemplateVisual project={project} />
       </div>
     </article>
   )

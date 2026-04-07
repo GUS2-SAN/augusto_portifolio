@@ -1,7 +1,4 @@
 const navItems = [
-  { href: '#autoridade', label: 'Autoridade' },
-  { href: '#projetos', label: 'Sites' },
-  { href: '#processo', label: 'Processo' },
   { href: '#contato', label: 'Contato' },
 ]
 
@@ -15,7 +12,7 @@ export function StickyPortfolioNav({ visible, siteConfig }) {
         <div className="sticky-portfolio-nav__shell">
           <a className="sticky-portfolio-nav__brand" href="#top" aria-label="Voltar para o topo">
             <span className="sticky-portfolio-nav__badge">AS</span>
-            <strong>{`${siteConfig.name} - ${siteConfig.role}`}</strong>
+            <strong>{siteConfig.name}</strong>
           </a>
 
           <nav className="sticky-portfolio-nav__nav" aria-label="Navegação fixa do portfólio">

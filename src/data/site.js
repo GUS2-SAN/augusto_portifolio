@@ -13,27 +13,20 @@ export const siteConfig = {
   githubLabel: 'github.com/GUS2-SAN',
   responseTime: 'Retorno inicial em até 24h úteis',
   closing: {
-    eyebrow: 'Pronto para avançar',
-    title: 'Se o seu negócio precisa de um site profissional, este é o próximo passo.',
-    description: 'Me envie sua ideia ou uma referência. Eu retorno com direção clara e próximos passos.',
+    eyebrow: 'Contato',
+    title: 'Se o seu site não transmite valor, ele está te fazendo perder cliente.',
+    description:
+      'Me envie sua ideia ou uma referência. Eu retorno com direção clara e próximos passos.',
     primaryLabel: 'Solicitar projeto',
     primaryHref:
       'https://wa.me/5579988228105?text=Ol%C3%A1%2C%20Augusto!%20Quero%20solicitar%20um%20projeto%20de%20site%20e%20gostaria%20de%20entender%20os%20pr%C3%B3ximos%20passos.',
     secondaryLabel: 'Enviar briefing',
     secondaryHref:
-      'mailto:augusto.santana009@gmail.com?subject=Solicitar%20projeto%20de%20site',
-    contactLabel: 'Contato direto',
-    firstReplyLabel: 'Primeiro retorno',
-    firstReplyItems: [
-      'Formato de site mais indicado',
-      'Estrutura inicial da página',
-      'Próximos passos para escopo',
-    ],
-    highlightsLabel: 'Projetos ideais',
-    highlights: [
-      'Sites institucionais para empresas e serviços',
-      'Landing pages de conversão para operações locais',
-      'Catálogos, marketplaces e páginas de produto',
+      'mailto:augusto.santana009@gmail.com?subject=Enviar%20briefing%20de%20site',
+    bullets: [
+      'Retorno inicial em até 24h úteis',
+      'Direção clara para o próximo passo',
+      'Projeto sob medida para o seu negócio',
     ],
   },
 }
