@@ -44,3 +44,4 @@ src/
 ## Direcao do projeto
 
 O site foi desenhado para comunicar maturidade, clareza e capacidade de entrega sem carregar sobras de projetos antigos. O foco esta na apresentacao de demos e templates como produtos reais, com composicoes grandes, copy curta e espaco para evoluir novos trabalhos.
+# augusto_portifolio
