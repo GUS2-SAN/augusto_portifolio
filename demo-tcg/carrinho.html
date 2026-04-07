@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1635" />
+    <meta
+      name="description"
+      content="Carrinho demonstrativo da Rare Candy Paradise com resumo de itens, frete e checkout para a demo de portfolio."
+    />
+    <link rel="icon" type="image/svg+xml" href="./assets/rare-candy-paradise-logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./cart.css" />
+    <title>Carrinho | Rare Candy Paradise</title>
+  </head>
+  <body class="cart-page">
+    <header class="cart-header">
+      <div class="container cart-header__inner">
+        <a class="brand brand--cart" href="./index.html#hero" aria-label="Voltar para Rare Candy Paradise">
+          <img
+            class="brand__logo"
+            src="./assets/rare-candy-paradise-logo.svg"
+            alt="Logo Rare Candy Paradise"
+          />
+          <span class="brand__copy">
+            <small>cards of</small>
+            <strong>Rare Candy Paradise</strong>
+            <span class="brand__signature">Portfolio de Augusto Santana</span>
+          </span>
+        </a>
+
+        <div class="cart-header__actions">
+          <a class="cart-pill" href="./index.html#product-grid-singles">Continuar comprando</a>
+          <div class="cart-indicator">
+            <span id="cart-count">0</span>
+            <small>itens no carrinho</small>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="cart-main">
+      <div class="container">
+        <section class="cart-hero">
+          <span class="cart-hero__eyebrow">Carrinho da demo</span>
+          <h1>Revise os itens antes do checkout.</h1>
+          <p>
+            Esta pagina simula um fluxo real de ecommerce para mostrar experiencia de produto,
+            navegacao e conversao dentro do portfolio. O frete esta gratis em todo o Brasil nesta
+            demonstracao.
+          </p>
+        </section>
+
+        <div class="cart-grid">
+          <section class="cart-panel">
+            <div class="cart-section__head">
+              <div>
+                <span class="cart-section__label">Selecao atual</span>
+                <h2>Itens adicionados</h2>
+              </div>
+              <span class="cart-section__count" id="cart-items-count">0 itens</span>
+            </div>
+
+            <div class="cart-empty" id="cart-empty" hidden>
+              <strong>Seu carrinho esta vazio.</strong>
+              <p>Volte para a vitrine e adicione cartas ou selados para ver o resumo completo.</p>
+              <a class="cart-button cart-button--ghost" href="./index.html#product-grid-singles">
+                Explorar produtos
+              </a>
+            </div>
+
+            <div class="cart-items" id="cart-items"></div>
+          </section>
+
+          <aside class="cart-summary">
+            <section class="summary-card">
+              <div class="summary-card__head">
+                <span class="cart-section__label">Frete</span>
+                <strong>Calcular entrega</strong>
+              </div>
+
+              <form class="shipping-form" id="shipping-form">
+                <label class="sr-only" for="shipping-zip">CEP</label>
+                <input
+                  id="shipping-zip"
+                  name="shipping-zip"
+                  type="text"
+                  inputmode="numeric"
+                  maxlength="9"
+                  placeholder="Digite seu CEP"
+                />
+                <button type="submit">Aplicar CEP</button>
+              </form>
+
+              <p class="shipping-note" id="shipping-feedback">
+                Frete gratis para todo o Brasil nesta demo.
+              </p>
+            </section>
+
+            <section class="summary-card">
+              <button
+                class="summary-toggle"
+                id="payment-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="payment-panel"
+              >
+                <span>Selecionar pagamento</span>
+                <strong id="current-payment-label">Pix instantaneo</strong>
+              </button>
+
+              <div class="payment-panel" id="payment-panel" hidden>
+                <label class="payment-option">
+                  <input type="radio" name="payment-method" value="pix" checked />
+                  <span>
+                    <strong>Pix instantaneo</strong>
+                    <small>Aprovacao imediata para a demonstracao.</small>
+                  </span>
+                </label>
+
+                <label class="payment-option">
+                  <input type="radio" name="payment-method" value="card" />
+                  <span>
+                    <strong>Cartao de credito</strong>
+                    <small>Fluxo visual de checkout tradicional.</small>
+                  </span>
+                </label>
+
+                <label class="payment-option">
+                  <input type="radio" name="payment-method" value="boleto" />
+                  <span>
+                    <strong>Boleto bancario</strong>
+                    <small>Opcao complementar para cenarios de loja.</small>
+                  </span>
+                </label>
+              </div>
+            </section>
+
+            <section class="summary-card summary-card--totals">
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <strong id="subtotal-value">R$ 0,00</strong>
+              </div>
+              <div class="summary-row">
+                <span>Frete</span>
+                <strong id="shipping-value">Gratis</strong>
+              </div>
+              <div class="summary-row">
+                <span>Pagamento</span>
+                <strong id="summary-payment">Pix instantaneo</strong>
+              </div>
+              <div class="summary-row summary-row--total">
+                <span>Total</span>
+                <strong id="total-value">R$ 0,00</strong>
+              </div>
+            </section>
+
+            <button class="cart-button cart-button--primary" id="checkout-button" type="button">
+              Ir para checkout
+            </button>
+            <a class="cart-button cart-button--ghost" href="../#contato">Quero um site assim</a>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <div class="demo-modal" id="demo-modal" hidden>
+      <div class="demo-modal__backdrop" data-close-modal></div>
+
+      <div
+        class="demo-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="demo-modal-title"
+      >
+        <button class="demo-modal__close" type="button" data-close-modal aria-label="Fechar aviso">
+          <span></span>
+          <span></span>
+        </button>
+
+        <span class="demo-modal__eyebrow">Aviso de demonstracao</span>
+        <h2 id="demo-modal-title">Este site e apenas uma demo de portfolio.</h2>
+        <p>
+          Este site foi criado somente para o portfolio de Augusto Santana e nao representa um
+          marketplace real. Se voce gostou da experiencia e quer contratar um site assim, entre em
+          contato para desenvolver algo sob medida para o seu negocio.
+        </p>
+
+        <div class="demo-modal__actions">
+          <a class="cart-button cart-button--primary" href="../#contato">Falar com Augusto</a>
+          <button class="cart-button cart-button--ghost" type="button" data-close-modal>
+            Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./cart.js"></script>
+  </body>
+</html>

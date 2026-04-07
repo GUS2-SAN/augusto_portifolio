@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1635" />
+    <meta
+      name="description"
+      content="Rare Candy Paradise: home de marketplace Pokemon TCG com hero, vitrines, promocoes, banners e estrutura de loja inspirada nos prints enviados."
+    />
+    <link rel="icon" type="image/svg+xml" href="./assets/rare-candy-paradise-logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" as="image" href="./assets/hero-perfect-order.jpg" />
+    <link rel="preload" as="image" href="./assets/sv151-product.avif" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Rare Candy Paradise | Pokemon TCG</title>
+  </head>
+  <body>
+    <div class="topline">
+      <div class="container topline__inner">
+        <div class="topline__shipping">
+          <span class="topline__dot"></span>
+          <strong>Entregamos para todo o Brasil!</strong>
+        </div>
+
+        <div class="topline__links">
+          <a href="#footer-contact">Endereco</a>
+          <a href="#newsletter">Rastreio de Pedido</a>
+          <a href="#footer-links">Efetuar Login</a>
+          <a href="#footer-links">Criar Cadastro</a>
+        </div>
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="container header__main">
+        <a class="brand" href="#hero" aria-label="Rare Candy Paradise">
+          <img
+            class="brand__logo"
+            src="./assets/rare-candy-paradise-logo.svg"
+            alt="Logo Rare Candy Paradise"
+          />
+          <span class="brand__copy">
+            <small>cards of</small>
+            <strong>Rare Candy Paradise</strong>
+            <span class="brand__signature">Portfolio de Augusto Santana</span>
+          </span>
+        </a>
+
+        <form class="searchbar" id="search-form">
+          <label class="sr-only" for="search-input">Buscar produtos</label>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="buscar carta, box, elite trainer box..."
+            autocomplete="off"
+          />
+          <button type="submit">Buscar</button>
+        </form>
+
+        <div class="header__actions">
+          <button class="icon-action icon-action--wishlist" type="button" aria-label="Favoritos">
+            <span class="icon-action__circle" aria-hidden="true">
+              <svg class="icon-action__glyph" viewBox="0 0 24 24">
+                <path
+                  d="M12 20.5 4.8 13.7a4.7 4.7 0 0 1 0-6.9 4.9 4.9 0 0 1 7 0L12 7l.2-.2a4.9 4.9 0 0 1 7 0 4.7 4.7 0 0 1 0 6.9L12 20.5Z"
+                />
+              </svg>
+            </span>
+            <span id="wishlist-count">0</span>
+          </button>
+
+          <button class="icon-action icon-action--cart" type="button" aria-label="Carrinho">
+            <span class="icon-action__circle" aria-hidden="true">
+              <svg class="icon-action__glyph" viewBox="0 0 24 24">
+                <path d="M3 5h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7.2" />
+                <circle cx="10" cy="19" r="1.5" />
+                <circle cx="17" cy="19" r="1.5" />
+              </svg>
+            </span>
+            <span id="cart-count">0</span>
+          </button>
+
+          <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Abrir menu"
+            aria-controls="mobile-sidebar"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="header-contact" aria-label="Contato do portfolio">
+            <span class="header-contact__label">Contato</span>
+            <div class="header-contact__items">
+              <a class="header-contact__item" href="mailto:augusto.santana009@gmail.com">
+                <span class="header-contact__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <rect x="3" y="6" width="18" height="12" rx="3" />
+                    <path d="m4.5 7.5 7.5 5.5 7.5-5.5" />
+                  </svg>
+                </span>
+                <span>E-mail</span>
+              </a>
+              <a class="header-contact__item header-contact__item--accent" href="../#contato">
+                <span class="header-contact__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v6a2.5 2.5 0 0 1-2.5 2.5H10l-4 4v-4H6.5A2.5 2.5 0 0 1 4 12.5Z" />
+                  </svg>
+                </span>
+                <span>Falar com Augusto</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="navband">
+        <div class="container navband__inner">
+          <button class="category-trigger" type="button">
+            <span>Compre por categoria</span>
+            <svg class="category-trigger__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="4" width="6" height="6" rx="1.5" />
+              <rect x="14" y="4" width="6" height="6" rx="1.5" />
+              <rect x="4" y="14" width="6" height="6" rx="1.5" />
+              <rect x="14" y="14" width="6" height="6" rx="1.5" />
+            </svg>
+          </button>
+
+          <nav class="main-nav" aria-label="Navegacao principal">
+            <a href="#hero">Home</a>
+            <a href="#banners">Blog</a>
+            <a href="#social-banner">Sobre</a>
+            <a href="#footer-contact">Contato</a>
+            <a href="#footer-links">F.A.Q</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="mobile-overlay" id="mobile-overlay" hidden></div>
+
+      <aside class="mobile-sidebar" id="mobile-sidebar" aria-hidden="true">
+        <div class="mobile-sidebar__header">
+          <div class="mobile-sidebar__title">
+            <strong>Rare Candy Paradise</strong>
+            <span>Portfolio de Augusto Santana</span>
+          </div>
+
+          <button class="mobile-sidebar__close" id="mobile-sidebar-close" type="button" aria-label="Fechar menu">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <div class="mobile-sidebar__section">
+          <button class="category-trigger category-trigger--drawer" type="button">
+            <span>Compre por categoria</span>
+            <svg class="category-trigger__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="4" width="6" height="6" rx="1.5" />
+              <rect x="14" y="4" width="6" height="6" rx="1.5" />
+              <rect x="4" y="14" width="6" height="6" rx="1.5" />
+              <rect x="14" y="14" width="6" height="6" rx="1.5" />
+            </svg>
+          </button>
+        </div>
+
+        <nav class="mobile-nav" aria-label="Navegacao mobile">
+          <a href="#hero">Home</a>
+          <a href="#banners">Blog</a>
+          <a href="#social-banner">Sobre</a>
+          <a href="#footer-contact">Contato</a>
+          <a href="#footer-links">F.A.Q</a>
+        </nav>
+
+        <div class="mobile-sidebar__section">
+          <span class="header-contact__label">Contato</span>
+          <div class="mobile-sidebar__contact">
+            <a class="header-contact__item" href="mailto:augusto.santana009@gmail.com">
+              <span class="header-contact__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="6" width="18" height="12" rx="3" />
+                  <path d="m4.5 7.5 7.5 5.5 7.5-5.5" />
+                </svg>
+              </span>
+              <span>E-mail</span>
+            </a>
+            <a class="header-contact__item header-contact__item--accent" href="../#contato">
+              <span class="header-contact__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v6a2.5 2.5 0 0 1-2.5 2.5H10l-4 4v-4H6.5A2.5 2.5 0 0 1 4 12.5Z" />
+                </svg>
+              </span>
+              <span>Falar com Augusto</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </header>
+
+    <main>
+      <section class="hero-section" id="hero">
+        <div class="hero-slider" id="hero-slider">
+          <article class="hero-slide hero-slide--banner">
+            <div class="hero-slide__banner-shell" style="--hero-banner-position:center center;">
+              <img
+                class="hero-slide__banner-image"
+                src="./assets/hero-perfect-order.jpg"
+                alt="Banner Pokemon TCG Mega Evolution Perfect Order com Eternatus, Blissey, Starmie e Meowth."
+              />
+              <div class="hero-slide__banner-copy">
+                <span class="hero-slide__banner-badge">Lancamento em destaque</span>
+                <div class="hero-slide__banner-title">Mega Evolution-Perfect Order</div>
+                <p class="hero-slide__banner-summary">
+                  Nova fase do Pokemon TCG com ETB, display box, bundle e colecoes em vitrine
+                  principal.
+                </p>
+              </div>
+              <div class="hero-slide__banner-actions">
+                <a class="hero-slide__cta hero-slide__cta--banner" href="#product-grid-sealed"
+                  >Compre aqui</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="hero-dots" id="hero-dots" aria-label="Paginas do banner principal">
+          <button type="button" class="is-active" aria-label="Ir para banner 1"></button>
+          <button type="button" aria-label="Ir para banner 2"></button>
+          <button type="button" aria-label="Ir para banner 3"></button>
+        </div>
+      </section>
+
+      <section class="service-section">
+        <div class="container">
+          <div class="service-strip">
+            <article class="service-card">
+              <span class="service-card__icon service-card__icon--violet" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="6" width="18" height="12" rx="3" />
+                  <path d="M3 10.5h18" />
+                </svg>
+              </span>
+              <div>
+                <strong>pague em</strong>
+                <span>ate 12x sem juros</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <span class="service-card__icon service-card__icon--yellow" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3 16h11" />
+                  <path d="M14 16h4l3-4V8h-5l-2-3H9" />
+                  <circle cx="8" cy="17.5" r="1.5" />
+                  <circle cx="18" cy="17.5" r="1.5" />
+                </svg>
+              </span>
+              <div>
+                <strong>entrega rapida</strong>
+                <span>e garantia local</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <span class="service-card__icon service-card__icon--pink" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 12a8 8 0 1 1 4 6.9" />
+                  <path d="M12 8v4l3 2" />
+                  <path d="M4 18v-3h3" />
+                </svg>
+              </span>
+              <div>
+                <strong>atendimento</strong>
+                <span>personalizado</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <span class="service-card__icon service-card__icon--cyan" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="4" y="4" width="6" height="6" rx="1.5" />
+                  <rect x="14" y="4" width="6" height="6" rx="1.5" />
+                  <rect x="4" y="14" width="6" height="6" rx="1.5" />
+                  <rect x="14" y="14" width="6" height="6" rx="1.5" />
+                </svg>
+              </span>
+              <div>
+                <strong>produtos</strong>
+                <span>diversos no catalogo</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="banner-row" id="banners">
+        <div class="container banner-row__grid">
+          <article class="side-banner side-banner--emerald side-banner--has-art side-banner--journey">
+            <div class="side-banner__copy">
+              <strong>Scarlet &amp; Violet-Journey Together</strong>
+              <span>Treinadores classicos, cartas chase e produtos selados.</span>
+            </div>
+            <div class="side-banner__packs">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </article>
+
+          <article class="side-banner side-banner--violet side-banner--has-art side-banner--prismatic">
+            <div class="side-banner__copy">
+              <strong>Prismatic Evolutions</strong>
+              <span>Eevee, evolucoes e sealed premium para colecionador.</span>
+            </div>
+            <div class="side-banner__packs">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="shelf-section">
+        <div class="container">
+          <div class="shelf">
+            <div class="shelf__top">
+              <h2>Singles em destaque</h2>
+              <div class="shelf-tabs" id="shelf-tabs-singles">
+                <button type="button" class="is-active">Mais procurados</button>
+                <button type="button">Em promocao</button>
+                <button type="button">Mais vendidos</button>
+              </div>
+            </div>
+
+            <div class="shelf__body">
+              <aside class="promo-panel" id="promo-panel-singles">
+                <div class="promo-panel__label">#promo</div>
+                <div class="promo-panel__body">
+                  <div
+                    class="promo-panel__thumb"
+                    style="--promo-a:#ffd84d; --promo-b:#ff7a42;"
+                  >
+                    <img src="./assets/cards/card-01.png" alt="Mega Hawlucha ex" />
+                  </div>
+                  <div class="promo-panel__title">
+                    Mega Hawlucha ex<br />(ASCP 116/217)
+                  </div>
+                  <div class="promo-panel__prices">
+                    <div><span>de:</span><strong><s>R$ 99,75</s></strong></div>
+                    <div><span>por:</span><strong>R$ 89,75</strong></div>
+                  </div>
+                  <div class="promo-panel__timer">00:00:00.0</div>
+                </div>
+              </aside>
+
+              <div class="product-grid product-grid--cards" id="product-grid-singles">
+                <article class="product-card">
+                  <button
+                    class="product-card__cart"
+                    type="button"
+                    data-add="mega-hawlucha-ex"
+                    aria-label="Adicionar Mega Hawlucha ex ao carrinho"
+                  ></button>
+
+                  <div
+                    class="product-thumb product-thumb--single"
+                    style="--accent:#ffd84d; --accent-2:#ff8c3a;"
+                  >
+                    <span class="product-thumb__badge">Foil</span>
+                    <img
+                      class="product-thumb__image"
+                      src="./assets/cards/card-01.png"
+                      alt="Mega Hawlucha ex"
+                    />
+                    <span class="product-thumb__stock">
+                      <strong>1</strong>
+                      <small>unid</small>
+                    </span>
+                  </div>
+
+                  <h3>Mega Hawlucha ex</h3>
+                  <div class="product-card__meta">Mega Evolucao</div>
+                  <div class="product-card__price">R$ 89,75</div>
+                </article>
+
+                <article class="product-card">
+                  <button
+                    class="product-card__cart"
+                    type="button"
+                    data-add="toxtricity"
+                    aria-label="Adicionar Toxtricity ao carrinho"
+                  ></button>
+
+                  <div
+                    class="product-thumb product-thumb--single"
+                    style="--accent:#67ddff; --accent-2:#4d7bf0;"
+                  >
+                    <img
+                      class="product-thumb__image"
+                      src="./assets/cards/card-02.png"
+                      alt="Toxtricity"
+                    />
+                    <span class="product-thumb__stock">
+                      <strong>2</strong>
+                      <small>unid</small>
+                    </span>
+                  </div>
+
+                  <h3>Toxtricity</h3>
+                  <div class="product-card__meta">Estagio 1</div>
+                  <div class="product-card__price">R$ 14,75</div>
+                </article>
+
+                <article class="product-card">
+                  <button
+                    class="product-card__cart"
+                    type="button"
+                    data-add="yamper"
+                    aria-label="Adicionar Yamper ao carrinho"
+                  ></button>
+
+                  <div
+                    class="product-thumb product-thumb--single"
+                    style="--accent:#ffe18c; --accent-2:#ffc680;"
+                  >
+                    <img
+                      class="product-thumb__image"
+                      src="./assets/cards/card-03.png"
+                      alt="Yamper"
+                    />
+                    <span class="product-thumb__stock">
+                      <strong>3</strong>
+                      <small>unid</small>
+                    </span>
+                  </div>
+
+                  <h3>Yamper</h3>
+                  <div class="product-card__meta">Basico</div>
+                  <div class="product-card__price">R$ 9,75</div>
+                </article>
+
+                <article class="product-card">
+                  <button
+                    class="product-card__cart"
+                    type="button"
+                    data-add="mega-diancie-ex"
+                    aria-label="Adicionar Mega Diancie ex ao carrinho"
+                  ></button>
+
+                  <div
+                    class="product-thumb product-thumb--single"
+                    style="--accent:#ff84de; --accent-2:#9a6bea;"
+                  >
+                    <span class="product-thumb__badge">Foil</span>
+                    <img
+                      class="product-thumb__image"
+                      src="./assets/cards/card-04.png"
+                      alt="Mega Diancie ex"
+                    />
+                    <span class="product-thumb__stock">
+                      <strong>1</strong>
+                      <small>unid</small>
+                    </span>
+                  </div>
+
+                  <h3>Mega Diancie ex</h3>
+                  <div class="product-card__meta">Mega Evolucao</div>
+                  <div class="product-card__price">R$ 119,75</div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="banner-row banner-row--secondary">
+        <div class="container banner-row__grid">
+          <article class="side-banner side-banner--navy side-banner--has-art side-banner--perfect-order">
+            <div class="side-banner__copy">
+              <strong>Mega Evolution-Perfect Order</strong>
+              <span>Nova leva de ETB, display box, bundle e colecoes.</span>
+            </div>
+            <div class="side-banner__packs">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </article>
+
+          <article class="side-banner side-banner--gold side-banner--has-art side-banner--sv151">
+            <div class="side-banner__copy">
+              <strong>Scarlet &amp; Violet-151</strong>
+              <span>Kanto completo, ETBs premium e boxes para vitrine.</span>
+            </div>
+            <div class="side-banner__packs">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="shelf-section shelf-section--spaced">
+        <div class="container">
+          <div class="shelf">
+            <div class="shelf__top">
+              <h2>Selados mais buscados</h2>
+              <div class="shelf-tabs" id="shelf-tabs-sealed">
+                <button type="button" class="is-active">Mais procurados</button>
+                <button type="button">Em promocao</button>
+                <button type="button">Mais vendidos</button>
+              </div>
+            </div>
+
+            <div class="shelf__body">
+              <aside class="promo-panel promo-panel--sealed" id="promo-panel-sealed">
+                <div class="promo-panel__label">#promo</div>
+                <div class="promo-panel__body">
+                  <div
+                    class="promo-panel__thumb"
+                    style="--promo-a:#ffd44e; --promo-b:#5bc9ff;"
+                  ></div>
+                  <div class="promo-panel__title">
+                    Scarlet &amp; Violet-151 Pokemon Center Elite Trainer Box<br />(Premium sealed)
+                  </div>
+                  <div class="promo-panel__prices">
+                    <div><span>de:</span><strong><s>R$ 999,75</s></strong></div>
+                    <div><span>por:</span><strong>R$ 899,90</strong></div>
+                  </div>
+                  <div class="promo-panel__timer">00:00:00.0</div>
+                </div>
+              </aside>
+
+              <div class="product-grid" id="product-grid-sealed">
+                <article class="product-card">
+                  <button
+                    class="product-card__cart"
+                    type="button"
+                    data-add="perfect-order-etb"
+                    aria-label="Adicionar Mega Evolution-Perfect Order Elite Trainer Box ao carrinho"
+                  ></button>
+
+                  <div
+                    class="product-thumb product-thumb--sealed"
+                    style="--accent:#d0f22d; --accent-2:#1fa66d;"
+                  >
+                    <div class="product-thumb__frame">
+                      <div class="product-thumb__set">Lancamento de 27 mar 2026</div>
+                      <div class="product-thumb__art"><span>ETB</span></div>
+                      <div class="product-thumb__name">Lancamento de 27 mar 2026</div>
+                    </div>
+                    <span class="product-thumb__stock">
+                      <strong>4</strong>
+                      <small>unid</small>
+                    </span>
+                  </div>
+
+                  <h3>Mega Evolution-Perfect Order Elite Trainer Box</h3>
+                  <div class="product-card__meta">Lancamento de 27 mar 2026</div>
+                  <div class="product-card__price">R$ 709,90</div>
+                </article>
+
+                <article class="product-card">
+                  <button
+                    class="product-card__cart"
+                    type="button"
+                    data-add="perfect-order-display"
+                    aria-label="Adicionar Mega Evolution-Perfect Order Booster Display Box ao carrinho"
+                  ></button>
+
+                  <div
+                    class="product-thumb product-thumb--sealed"
+                    style="--accent:#ffd44e; --accent-2:#ff8a42;"
+                  >
+                    <div class="product-thumb__frame">
+                      <div class="product-thumb__set">Display com 36 packs</div>
+                      <div class="product-thumb__art"><span>Display</span></div>
+                      <div class="product-thumb__name">Display com 36 packs</div>
+                    </div>
+                    <span class="product-thumb__stock">
+                      <strong>2</strong>
+                      <small>unid</small>
+                    </span>
+                  </div>
+
+                  <h3>Mega Evolution-Perfect Order Booster Display Box</h3>
+                  <div class="product-card__meta">Display com 36 packs</div>
+                  <div class="product-card__price">R$ 1.549,90</div>
+                </article>
+
+                <article class="product-card">
+                  <button
+                    class="product-card__cart"
+                    type="button"
+                    data-add="prismatic-etb"
+                    aria-label="Adicionar Scarlet &amp; Violet-Prismatic Evolutions Elite Trainer Box ao carrinho"
+                  ></button>
+
+                  <div
+                    class="product-thumb product-thumb--sealed"
+                    style="--accent:#ff72c8; --accent-2:#ffd44e;"
+                  >
+                    <div class="product-thumb__frame">
+                      <div class="product-thumb__set">Promo Eevee</div>
+                      <div class="product-thumb__art"><span>ETB</span></div>
+                      <div class="product-thumb__name">Promo Eevee</div>
+                    </div>
+                    <span class="product-thumb__stock">
+                      <strong>4</strong>
+                      <small>unid</small>
+                    </span>
+                  </div>
+
+                  <h3>Scarlet &amp; Violet-Prismatic Evolutions Elite Trainer Box</h3>
+                  <div class="product-card__meta">Promo Eevee</div>
+                  <div class="product-card__price">R$ 599,90</div>
+                </article>
+
+                <article class="product-card">
+                  <button
+                    class="product-card__cart"
+                    type="button"
+                    data-add="journey-display"
+                    aria-label="Adicionar Scarlet &amp; Violet-Journey Together Enhanced Booster Display Box ao carrinho"
+                  ></button>
+
+                  <div
+                    class="product-thumb product-thumb--sealed"
+                    style="--accent:#61e5ff; --accent-2:#4bb56b;"
+                  >
+                    <div class="product-thumb__frame">
+                      <div class="product-thumb__set">N's Reshiram bonus</div>
+                      <div class="product-thumb__art"><span>Display</span></div>
+                      <div class="product-thumb__name">N's Reshiram bonus</div>
+                    </div>
+                    <span class="product-thumb__stock">
+                      <strong>2</strong>
+                      <small>unid</small>
+                    </span>
+                  </div>
+
+                  <h3>Scarlet &amp; Violet-Journey Together Enhanced Booster Display Box</h3>
+                  <div class="product-card__meta">N's Reshiram bonus</div>
+                  <div class="product-card__price">R$ 1.499,90</div>
+                </article>
+
+                <article class="product-card">
+                  <button
+                    class="product-card__cart"
+                    type="button"
+                    data-add="sv151-etb"
+                    aria-label="Adicionar Scarlet &amp; Violet-151 Pokemon Center Elite Trainer Box ao carrinho"
+                  ></button>
+
+                  <div
+                    class="product-thumb product-thumb--sealed"
+                    style="--accent:#ffd44e; --accent-2:#57cfff;"
+                  >
+                    <div class="product-thumb__frame">
+                      <div class="product-thumb__set">11 boosters</div>
+                      <div class="product-thumb__art"><span>PC ETB</span></div>
+                      <div class="product-thumb__name">11 boosters</div>
+                    </div>
+                    <span class="product-thumb__stock">
+                      <strong>2</strong>
+                      <small>unid</small>
+                    </span>
+                  </div>
+
+                  <h3>Scarlet &amp; Violet-151 Pokemon Center Elite Trainer Box</h3>
+                  <div class="product-card__meta">11 boosters</div>
+                  <div class="product-card__price">R$ 899,90</div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="social-banner" id="social-banner">
+        <div class="container social-banner__inner">
+          <div class="social-banner__cards" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="social-banner__copy">
+            <div class="social-banner__icons">
+              <span aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4.25" />
+                  <circle cx="17.3" cy="6.7" r="1.2" fill="currentColor" stroke="none" />
+                </svg>
+              </span>
+              <span aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="6" width="18" height="12" rx="4" />
+                  <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+                </svg>
+              </span>
+              <span aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M16.7 14.6 15.1 13a1.6 1.6 0 0 0-1.7-.4l-1 .4a11.5 11.5 0 0 1-2.4-2.4l.4-1A1.6 1.6 0 0 0 10 8L8.4 6.3A1.6 1.6 0 0 0 6.8 6l-1.1.5A2.4 2.4 0 0 0 4.3 9c.6 3.2 2.2 6.1 4.6 8.4 2.3 2.4 5.2 4 8.4 4.6a2.4 2.4 0 0 0 2.5-1.4l.5-1.1a1.6 1.6 0 0 0-.3-1.6Z" />
+                </svg>
+              </span>
+            </div>
+            <strong>siga nossas redes sociais</strong>
+          </div>
+
+          <div class="social-banner__brand">
+            <img
+              class="brand__logo brand__logo--small"
+              src="./assets/rare-candy-paradise-logo.svg"
+              alt="Logo Rare Candy Paradise"
+            />
+            <span class="brand__copy brand__copy--light">
+              <small>cards of</small>
+              <strong>Rare Candy Paradise</strong>
+              <span class="brand__signature">Portfolio de Augusto Santana</span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="container testimonials__grid">
+          <article class="testimonial-card">
+            <strong>Fernando W.</strong>
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <p>Tudo perfeito! Cards muito bem embalados e envio rapido.</p>
+          </article>
+
+          <article class="testimonial-card">
+            <strong>Lucas F.</strong>
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <p>As cartas vieram em otimo estado, sleeveadas e com protecao rigida.</p>
+          </article>
+
+          <article class="testimonial-card">
+            <strong>Ronald R.</strong>
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <p>Pedido conforme a descricao, rastreio certo e prazo respeitado.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <section class="newsletter" id="newsletter">
+      <div class="container newsletter__inner">
+        <div class="newsletter__copy">
+          <span class="newsletter__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="5.5" width="18" height="13" rx="3" />
+              <path d="m4.5 7 7.5 5.5L19.5 7" />
+            </svg>
+          </span>
+          <strong>Quer estar por dentro das novidades?! Assine nossa newsletter!</strong>
+        </div>
+
+        <form class="newsletter__form">
+          <label class="sr-only" for="newsletter-input">Seu melhor email</label>
+          <input id="newsletter-input" type="email" placeholder="Deixe seu melhor email..." />
+          <button type="submit">Inscrever</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <div class="brand brand--footer">
+            <img
+              class="brand__logo brand__logo--large"
+              src="./assets/rare-candy-paradise-logo.svg"
+              alt="Logo Rare Candy Paradise"
+            />
+            <span class="brand__copy brand__copy--light">
+              <small>cards of</small>
+              <strong>Rare Candy Paradise</strong>
+              <span class="brand__signature">Portfolio de Augusto Santana</span>
+            </span>
+          </div>
+
+          <p>CNPJ: 45.802.678/0001-26</p>
+        </div>
+
+        <div class="footer__column" id="footer-links">
+          <h3>Navegue aqui</h3>
+          <a href="#newsletter">Cadastre-se</a>
+          <a href="#footer-links">Recuperar senha</a>
+          <a href="#footer-contact">Fale conosco</a>
+          <a href="#footer-links">Perguntas frequentes</a>
+          <a href="#hero">Meus pedidos</a>
+          <a href="#hero">Meu carrinho</a>
+          <a href="#hero">Minha conta</a>
+        </div>
+
+        <div class="footer__column footer__column--hours">
+          <h3>Atendimento - Loja fisica</h3>
+          <p>Segunda a sexta - 10h as 21h</p>
+          <p>Sabado - 10h as 17h</p>
+          <p>Domingo/feriados - fechado</p>
+
+          <h3>Atendimento - Online</h3>
+          <p>Segunda a sexta - 09h as 17h</p>
+          <p>Sabado/domingo/feriados - fechado</p>
+        </div>
+
+        <div class="footer__column" id="footer-contact">
+          <h3>Contato</h3>
+          <p>(21) 99985-8001 - Comercial</p>
+          <p>(21) 97932-4748 - Buylist</p>
+          <p>(21) 95919-4344 - Eventos</p>
+          <p>vendas@rarecandyparadise.com.br</p>
+
+          <h3>Endereco</h3>
+          <p>Av. Meriti, 908 - Vila da Penha</p>
+          <p>Rio de Janeiro - RJ | 21211-006</p>
+
+          <h3>Pagamento</h3>
+          <div class="payment-row">
+            <span>Pix</span>
+            <span>Boleto</span>
+            <span>Cartoes</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
