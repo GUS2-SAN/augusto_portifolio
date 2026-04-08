@@ -9,8 +9,14 @@ export const siteConfig = {
   whatsapp: '5579988228105',
   whatsappHref:
     'https://wa.me/5579988228105?text=Ol%C3%A1%2C%20Augusto!%20Quero%20solicitar%20um%20projeto%20de%20site%20e%20gostaria%20de%20conversar.',
+  gmailComposeHref:
+    'https://mail.google.com/mail/?view=cm&fs=1&to=augusto.santana009@gmail.com&su=Novo%20projeto%20de%20site',
   github: 'https://github.com/GUS2-SAN',
   githubLabel: 'github.com/GUS2-SAN',
+  linkedin: 'https://www.linkedin.com/in/augusto-santana-7aa25021b/',
+  linkedinLabel: 'linkedin.com/in/augusto-santana-7aa25021b',
+  instagram: 'https://www.instagram.com/augus2.san/',
+  instagramLabel: '@augus2.san',
   responseTime: 'Retorno inicial em até 24h úteis',
   closing: {
     eyebrow: 'Contato',

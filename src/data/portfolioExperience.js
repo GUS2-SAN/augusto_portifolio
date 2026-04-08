@@ -1,5 +1,6 @@
 import techflowMarketplaceCover from '../assets/techflow-marketplace-cover.png'
 import rareCandyHero from '../../demo-tcg/assets/hero-perfect-order.jpg'
+import augustoProfile from '../assets/augusto-profile.jpg'
 import { siteConfig } from './site'
 
 export const portfolioExperience = {
@@ -15,17 +16,13 @@ export const portfolioExperience = {
       'Design cinematografico, front-end preciso e experiencia visual pensada para vender percepcao, confianca e autoridade desde o primeiro segundo.',
     topbarCta: {
       label: 'Contato',
-      href: siteConfig.whatsappHref,
-      external: true,
+      href: '#contato',
+      external: false,
     },
     primaryCta: {
       label: 'Solicitar projeto',
       href: siteConfig.whatsappHref,
       external: true,
-    },
-    secondaryCta: {
-      label: 'Ver projetos',
-      href: '#projetos',
     },
     ambientNotes: [
       'Direcao visual autoral',
@@ -143,22 +140,105 @@ export const portfolioExperience = {
       previewTitle: 'Narrativa de produto pronta para demo e venda.',
       tones: ['#9c7dff', '#18142f', '#1f4ae5'],
     },
+    {
+      id: 'orla-studio',
+      eyebrow: 'Site de marca',
+      title: 'Orla Studio',
+      segment: 'Arquitetura autoral',
+      summary: 'Site para estudio com foco em imagem, desejo e captacao de clientes premium.',
+      href: '#contato',
+      previewEyebrow: 'Interiores com assinatura',
+      previewTitle: 'Portifolio pensado para vender repertorio, detalhe e percepcao.',
+      tones: ['#ffb784', '#241712', '#7b4931'],
+    },
+    {
+      id: 'vertice-legal',
+      eyebrow: 'Site institucional',
+      title: 'Vertice Legal',
+      segment: 'Advocacia empresarial',
+      summary: 'Presenca digital sobria para escritorio com autoridade e conversa consultiva.',
+      href: '#contato',
+      previewEyebrow: 'Direcao juridica premium',
+      previewTitle: 'Confianca imediata para clientes que avaliam cada detalhe.',
+      tones: ['#8ba7ff', '#11192d', '#314d89'],
+    },
+    {
+      id: 'aurum-estates',
+      eyebrow: 'Site de vendas',
+      title: 'Aurum Estates',
+      segment: 'Imobiliaria boutique',
+      summary: 'Landing para imoveis de alto padrao com atmosfera elegante e contato rapido.',
+      href: '#contato',
+      previewEyebrow: 'Lancamentos selecionados',
+      previewTitle: 'Experiencia de imovel premium com leitura limpa e desejo imediato.',
+      tones: ['#ffcf8b', '#1f160f', '#7d5b2e'],
+    },
+    {
+      id: 'pulse-summit',
+      eyebrow: 'Site de evento',
+      title: 'Pulse Summit',
+      segment: 'Conferencia executiva',
+      summary: 'Pagina de evento com agenda clara, palestrantes e atmosfera de produto real.',
+      href: '#contato',
+      previewEyebrow: 'Encontro para decisores',
+      previewTitle: 'Uma identidade que faz o evento parecer maior antes da inscricao.',
+      tones: ['#ff8dc0', '#26111d', '#7d295a'],
+    },
+    {
+      id: 'selva-boutique',
+      eyebrow: 'Site de marca',
+      title: 'Selva Boutique',
+      segment: 'Hotel de experiencia',
+      summary: 'Site sensorial para hospedagem premium com narrativa visual e reservas.',
+      href: '#contato',
+      previewEyebrow: 'Hospedagem com atmosfera',
+      previewTitle: 'Uma vitrine para vender exclusividade, clima e permanencia.',
+      tones: ['#89e2c0', '#0f221d', '#2a6f58'],
+    },
   ],
-  finalCta: {
-    eyebrow: 'Proximo projeto',
-    title: 'Se o seu site precisa parecer outro nivel, vamos construir isso direito.',
+  about: {
+    eyebrow: 'Sobre',
+    title: 'Augusto Santana',
     description:
-      'Sem formula pronta. Direcao visual, arquitetura front-end e acabamento com cara de produto real.',
-    primaryAction: {
-      label: 'Solicitar projeto',
-      href: siteConfig.whatsappHref,
+      'Desenvolvedor web focado em sites com direcao visual premium, front-end refinado e experiencia com cara de produto real.',
+    image: augustoProfile,
+    imageAlt: 'Foto de Augusto Santana.',
+    phone: {
+      label: 'Telefone',
+      value: siteConfig.phoneDisplay,
+      href: siteConfig.phoneHref,
+    },
+    email: {
+      label: 'Email',
+      value: siteConfig.email,
+      href: siteConfig.gmailComposeHref,
       external: true,
     },
-    secondaryAction: {
-      label: 'Enviar briefing',
-      href: 'mailto:augusto.santana009@gmail.com?subject=Briefing%20de%20site%20premium',
-      external: true,
-    },
-    meta: [siteConfig.location, siteConfig.responseTime, siteConfig.githubLabel],
+    socials: [
+      {
+        label: 'Gmail',
+        href: siteConfig.gmailComposeHref,
+        icon: 'gmail',
+        external: true,
+      },
+      {
+        label: 'GitHub',
+        href: siteConfig.github,
+        icon: 'github',
+        external: true,
+      },
+      {
+        label: 'LinkedIn',
+        href: siteConfig.linkedin,
+        icon: 'linkedin',
+        external: true,
+      },
+      {
+        label: 'Instagram',
+        href: siteConfig.instagram,
+        icon: 'instagram',
+        external: true,
+      },
+    ],
   },
 }

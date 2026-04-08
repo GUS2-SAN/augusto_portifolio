@@ -172,13 +172,6 @@ export function PortfolioHero({
               >
                 {hero.primaryCta.label}
               </ExternalAwareLink>
-
-              <ExternalAwareLink
-                className="button button--secondary"
-                href={hero.secondaryCta.href}
-              >
-                {hero.secondaryCta.label}
-              </ExternalAwareLink>
             </div>
           </div>
 

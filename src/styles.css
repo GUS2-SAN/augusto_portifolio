@@ -380,11 +380,13 @@ p {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  min-width: 0;
 }
 
 .customization-drawer__header h2 {
   font-size: clamp(1.12rem, 1.6vw, 1.3rem);
   letter-spacing: -0.05em;
+  min-width: 0;
 }
 
 .customization-drawer__icon-button,
@@ -404,6 +406,7 @@ p {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .customization-drawer__icon-button {
@@ -478,6 +481,58 @@ p {
     rgba(8, 11, 18, 0.72);
 }
 
+.whatsapp-float {
+  position: fixed;
+  right: clamp(16px, 2vw, 28px);
+  bottom: clamp(16px, 2vw, 28px);
+  z-index: 9990;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 58px;
+  padding: 0 18px 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04)),
+    linear-gradient(135deg, #28d061, #139847);
+  color: #f7fffb;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 22px 44px rgba(0, 0, 0, 0.24),
+    0 0 28px rgba(40, 208, 97, 0.24);
+  backdrop-filter: blur(14px);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 26px 54px rgba(0, 0, 0, 0.28),
+    0 0 34px rgba(40, 208, 97, 0.28);
+  outline: none;
+}
+
+.whatsapp-float svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
+
+.whatsapp-float span {
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .page-shell {
   position: relative;
   z-index: 1;
@@ -526,6 +581,7 @@ p {
 .hero__eyebrow,
 .project-spotlight__eyebrow,
 .project-tile__eyebrow,
+.about-card__eyebrow,
 .final-cta__eyebrow {
   display: inline-flex;
   align-items: center;
@@ -540,6 +596,7 @@ p {
 
 .section-intro__eyebrow::before,
 .hero__eyebrow::before,
+.about-card__eyebrow::before,
 .final-cta__eyebrow::before {
   content: '';
   width: 42px;
@@ -549,11 +606,13 @@ p {
 }
 
 .section-intro h2,
+.about-card h2,
 .final-cta h2 {
   font-size: clamp(2.7rem, 5vw, 4.9rem);
 }
 
 .section-intro p,
+.about-card p,
 .final-cta p {
   max-width: 52ch;
   color: var(--text-soft);
@@ -1502,6 +1561,181 @@ p {
   padding-bottom: clamp(96px, 10vw, 140px);
 }
 
+.portfolio-section--about {
+  padding-top: clamp(74px, 9vw, 118px);
+  padding-bottom: clamp(96px, 10vw, 140px);
+}
+
+.about-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 42px);
+  padding: clamp(28px, 4vw, 44px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at 18% 14%, rgba(255, 147, 88, 0.12), transparent 28%),
+    radial-gradient(circle at 84% 20%, rgba(127, 99, 255, 0.14), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
+    rgba(8, 11, 18, 0.84);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 34px 82px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  inset: auto auto -24% -10%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255, 135, 82, 0.22), rgba(129, 99, 255, 0.08) 58%, transparent 72%);
+  filter: blur(58px);
+  opacity: 0.85;
+}
+
+.about-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.about-card__media {
+  position: relative;
+  width: min(100%, 280px);
+}
+
+.about-card__media::after {
+  content: '';
+  position: absolute;
+  inset: auto 12% -12% 12%;
+  height: 34%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(123, 99, 255, 0.26), transparent 72%);
+  filter: blur(24px);
+  opacity: 0.8;
+}
+
+.about-card__image {
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 26px 54px rgba(0, 0, 0, 0.26);
+}
+
+.about-card__content {
+  display: grid;
+  gap: 18px;
+  align-content: center;
+}
+
+.about-card h2 {
+  max-width: 10ch;
+}
+
+.about-card__directs {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 420px);
+}
+
+.about-card__phone {
+  display: grid;
+  gap: 6px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)),
+    rgba(10, 14, 24, 0.74);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 18px 40px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    background-color 0.28s ease;
+}
+
+.about-card__phone:hover,
+.about-card__phone:focus-visible,
+.about-card__social:hover,
+.about-card__social:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.18);
+  outline: none;
+}
+
+.about-card__phone span {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.about-card__phone strong {
+  font-size: 0.98rem;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.about-card__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.about-card__social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)),
+    rgba(10, 14, 24, 0.74);
+  color: var(--text);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 18px 40px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    color 0.28s ease;
+}
+
+.about-card__social svg {
+  width: 22px;
+  height: 22px;
+}
+
+.about-card__icon--gmail,
+.about-card__icon--instagram {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.about-card__icon--github,
+.about-card__icon--linkedin {
+  fill: currentColor;
+}
+
 .final-cta {
   position: relative;
   display: grid;
@@ -1852,6 +2086,7 @@ p {
 
   .project-spotlight__copy h2,
   .section-intro h2,
+  .about-card h2,
   .final-cta h2 {
     font-size: clamp(2.3rem, 11vw, 3.4rem);
   }
@@ -1905,11 +2140,16 @@ p {
   }
 
   .customization-drawer__header {
-    gap: 12px;
+    gap: 8px;
   }
 
   .customization-drawer__header h2 {
-    font-size: clamp(1.28rem, 7vw, 1.72rem);
+    max-width: calc(100% - 88px);
+    font-size: clamp(0.76rem, 3.6vw, 0.92rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: -0.03em;
   }
 
   .customization-drawer__section {
@@ -1937,6 +2177,28 @@ p {
 
   .customization-drawer__scrim {
     background: rgba(3, 6, 12, 0.16);
+  }
+
+  .whatsapp-float {
+    min-height: 54px;
+    padding: 0;
+    width: 54px;
+    justify-content: center;
+    border-radius: 18px;
+  }
+
+  .whatsapp-float span {
+    display: none;
+  }
+
+  .about-card {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .about-card__media {
+    width: min(100%, 220px);
+    justify-self: center;
   }
 
   .final-cta {

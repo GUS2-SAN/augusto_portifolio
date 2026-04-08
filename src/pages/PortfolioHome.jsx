@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { PageCustomizationSidebar } from '../components/PageCustomizationSidebar'
-import { PortfolioFinalCta } from '../components/PortfolioFinalCta'
+import { PortfolioAboutCard } from '../components/PortfolioAboutCard'
 import { PortfolioHero } from '../components/PortfolioHero'
 import { PixelArtBackdrop } from '../components/PixelArtBackdrop'
 import { PortfolioPrimaryShowcase } from '../components/PortfolioPrimaryShowcase'
 import { PortfolioSecondaryShowcase } from '../components/PortfolioSecondaryShowcase'
+import { WhatsAppFloat } from '../components/WhatsAppFloat'
 import { usePixelBackdropSettings } from '../hooks/usePixelBackdropSettings'
 import { portfolioExperience } from '../data/portfolioExperience'
 
@@ -34,9 +35,11 @@ export function PortfolioHome() {
         <main className="portfolio-main">
           <PortfolioPrimaryShowcase projects={portfolioExperience.primaryProjects} />
           <PortfolioSecondaryShowcase projects={portfolioExperience.secondaryProjects} />
-          <PortfolioFinalCta cta={portfolioExperience.finalCta} />
+          <PortfolioAboutCard about={portfolioExperience.about} />
         </main>
       </div>
+
+      <WhatsAppFloat href={portfolioExperience.hero.primaryCta.href} />
     </>
   )
 }
