@@ -111,7 +111,7 @@ export function Hero({ siteConfig, theme, onToggleTheme, featuredProject, heroRe
                 </div>
 
                 <a
-                  className="hero-preview__link"
+                  className="button button--ghost hero-preview__link"
                   href={projectHref}
                   target={projectTarget}
                   rel={projectRel}
