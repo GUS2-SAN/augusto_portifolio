@@ -7,6 +7,7 @@ export function RevealOnScroll({
   delay = 0,
   threshold = 0.2,
   style,
+  ...restProps
 }) {
   const elementRef = useRef(null)
   const [isVisible, setIsVisible] = useState(() => {
@@ -48,6 +49,7 @@ export function RevealOnScroll({
   }, [isVisible, threshold])
 
   const sharedProps = {
+    ...restProps,
     ref: elementRef,
     className: `reveal ${isVisible ? 'is-visible' : ''} ${className}`.trim(),
     style: {

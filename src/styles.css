@@ -1052,6 +1052,11 @@ p {
   transform: translateY(var(--hero-drift, 0px));
 }
 
+.hero__device-link {
+  display: block;
+  color: inherit;
+}
+
 .hero__device::after {
   content: '';
   position: absolute;
@@ -1119,10 +1124,11 @@ p {
 .hero__device-copy {
   position: absolute;
   left: 18px;
-  right: 18px;
+  right: min(228px, 42%);
   z-index: 2;
   display: grid;
   gap: 6px;
+  max-width: 290px;
 }
 
 .hero__device-copy {
@@ -1228,6 +1234,7 @@ p {
 
 .project-spotlight {
   position: relative;
+  scroll-margin-top: 112px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
@@ -1952,16 +1959,38 @@ p {
   }
 
   .hero__visual {
-    min-height: 400px;
+    grid-template-columns: minmax(0, 1fr) 240px;
+    align-items: end;
+    gap: 18px;
+    min-height: auto;
+  }
+
+  .hero__device-link {
+    width: 100%;
   }
 
   .hero__device {
+    width: 100%;
+    max-width: none;
     margin-left: 0;
   }
 
+  .hero__device-copy {
+    right: 18px;
+    max-width: min(32ch, calc(100% - 36px));
+  }
+
   .hero__glass--metrics {
-    left: auto;
-    right: 24px;
+    left: 24px;
+    right: auto;
+  }
+
+  .hero__glass--status {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    align-self: end;
   }
 }
 
@@ -2008,7 +2037,8 @@ p {
   }
 
   .hero__visual {
-    min-height: 360px;
+    grid-template-columns: minmax(0, 1fr) 210px;
+    min-height: auto;
     padding-top: 12px;
   }
 
@@ -2016,14 +2046,22 @@ p {
     min-height: 300px;
   }
 
+  .hero__device-copy {
+    right: 18px;
+    max-width: min(26ch, calc(100% - 36px));
+  }
+
   .hero__glass--metrics {
     top: 24px;
-    right: 0;
+    left: 18px;
+    right: auto;
   }
 
   .hero__glass--status {
-    right: 0;
-    bottom: -8px;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
   }
 
   .project-rail {

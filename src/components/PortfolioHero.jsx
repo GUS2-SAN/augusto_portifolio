@@ -28,6 +28,24 @@ export function PortfolioHero({
 }) {
   const heroRef = useRef(null)
 
+  const handleFeaturedClick = (event) => {
+    if (typeof window === 'undefined' || !hero.featured.href?.startsWith('#')) {
+      return
+    }
+
+    const targetElement = document.querySelector(hero.featured.href)
+
+    if (!targetElement) {
+      return
+    }
+
+    event.preventDefault()
+    targetElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }
+
   useEffect(() => {
     const element = heroRef.current
 
@@ -176,30 +194,32 @@ export function PortfolioHero({
           </div>
 
           <div className="hero__visual">
-            <div className="hero__device">
-              <div className="hero__device-chrome">
-                <span />
-                <span />
-                <span />
-              </div>
+            <a className="hero__device-link" href={hero.featured.href} onClick={handleFeaturedClick}>
+              <div className="hero__device">
+                <div className="hero__device-chrome">
+                  <span />
+                  <span />
+                  <span />
+                </div>
 
-              <div className="hero__device-screen">
-                <img
-                  alt={hero.featured.imageAlt}
-                  className="hero__device-image"
-                  decoding="async"
-                  fetchPriority="high"
-                  src={hero.featured.image}
-                />
-                <div className="hero__device-shade" />
+                <div className="hero__device-screen">
+                  <img
+                    alt={hero.featured.imageAlt}
+                    className="hero__device-image"
+                    decoding="async"
+                    fetchPriority="high"
+                    src={hero.featured.image}
+                  />
+                  <div className="hero__device-shade" />
 
-                <div className="hero__device-copy">
-                  <span>{hero.featured.label}</span>
-                  <strong>{hero.featured.title}</strong>
-                  <p>{hero.featured.summary}</p>
+                  <div className="hero__device-copy">
+                    <span>{hero.featured.label}</span>
+                    <strong>{hero.featured.title}</strong>
+                    <p>{hero.featured.summary}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
 
             <aside className="hero__glass hero__glass--metrics" aria-label="Metricas em destaque">
               {hero.featured.metrics.map((metric) => (

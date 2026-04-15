@@ -18,6 +18,7 @@ export function PortfolioProjectSpotlight({ project, delay = 0 }) {
       as="article"
       className="project-spotlight"
       delay={delay}
+      id={project.anchorId}
       style={{
         '--spotlight-accent': project.accent,
         '--spotlight-glow': project.glow,

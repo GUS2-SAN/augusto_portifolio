@@ -1,6 +1,7 @@
 import techflowMarketplaceCover from '../assets/techflow-marketplace-cover.png'
 import rareCandyHero from '../../demo-tcg/assets/hero-perfect-order.jpg'
 import augustoProfile from '../assets/augusto-profile.jpg'
+import nexusFeaturedCases from '../assets/nexus-featured-cases.png'
 import { siteConfig } from './site'
 
 export const portfolioExperience = {
@@ -31,11 +32,11 @@ export const portfolioExperience = {
     ],
     featured: {
       label: 'Projeto em destaque',
-      title: 'Nexus Solucoes',
+      title: 'Nexus Soluções',
       summary: 'Presenca corporativa pronta para abrir conversa e gerar confianca real.',
-      image:
-        'https://d2xsxph8kpxj0f.cloudfront.net/310519663497204380/3fnZkNKtG63ijH8f9Nqm4Z/hero-business-Pzesjy6w8MdWz7CccwPaop.webp',
-      imageAlt: 'Preview do projeto Nexus Solucoes em um frame de navegador.',
+      href: '#projeto-real-nexus-solucoes',
+      image: nexusFeaturedCases,
+      imageAlt: 'Preview do projeto Nexus Soluções em um frame de navegador.',
       metrics: [
         { label: 'Estrutura', value: '9 paginas' },
         { label: 'Contato', value: 'WhatsApp + form' },
@@ -47,14 +48,15 @@ export const portfolioExperience = {
     {
       id: 'nexus-solucoes',
       eyebrow: 'Projeto real publicado',
-      title: 'Nexus Solucoes',
+      title: 'Nexus Soluções',
       summary: 'Site B2B com presenca madura e foco direto em contato.',
       href: 'https://businesstmp-3fnzknkt.manus.space',
       buttonLabel: 'Abrir site',
       external: true,
+      anchorId: 'projeto-real-nexus-solucoes',
       image:
         'https://d2xsxph8kpxj0f.cloudfront.net/310519663497204380/3fnZkNKtG63ijH8f9Nqm4Z/hero-business-Pzesjy6w8MdWz7CccwPaop.webp',
-      imageAlt: 'Tela inicial do projeto Nexus Solucoes.',
+      imageAlt: 'Tela inicial do projeto Nexus Soluções.',
       accent: '#ff7d45',
       glow: 'rgba(255, 125, 69, 0.28)',
       surface:
